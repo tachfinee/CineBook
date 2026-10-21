@@ -17,6 +17,13 @@
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
+const catalogue = document.getElementById("films-container");
+
+console.log(catalogue);
+
+const prixtotal = document.getElementById("prix-total");
+
+console.log(prixtotal);
 // ==================================================
 // 0 BIS - MÉMORISER L'ÉTAT DE L'APPLICATION
 // ==================================================
@@ -26,6 +33,8 @@
 // PISTES : que faut-il remettre à zéro lorsqu'un autre film est choisi ?
 // TODO : déclarez trois variables avec des valeurs initiales adaptées.
 // ÉCRIVEZ VOTRE CODE ICI :
+
+
 
 
 // ==================================================
@@ -41,6 +50,21 @@
 // ÉCRIVEZ VOTRE CODE ICI :
 
 
+const cards = document.querySelector("#films-container");
+
+
+
+films.forEach((film) => {
+    cards.innerHTML += `<article class="overflow-hidden rounded-2xl border border-red-400 bg-white shadow-xl ring-2 ring-red-100" data-film-id="${film.id}">
+          <div class="relative"><img src="${film.affiche}" alt="Affiche de ${film.affiche}" class="aspect-[2/3] w-full object-cover"><span class="absolute bottom-3 right-3 rounded-full bg-white/95 px-3 py-1 text-xs font-extrabold shadow-lg">${film.prix} DH</span></div>
+          <div class="p-4"><p class="text-xs font-bold uppercase tracking-wider text-cine-red">${film.genre}</p><h3 class="mt-1 text-lg font-black">${film.titre}</h3><p class="mt-2 text-sm text-slate-500">${Math.floor(film.duree/60)} h ${film.duree%60} min</p><button data-film-id="${film.id}" type="button" class="mt-4 w-full rounded-xl bg-cine-red px-4 py-3 font-extrabold text-white">Sélectionné</button></div>
+        </article>`;
+
+
+});
+
+
+
 // ==================================================
 // US02 - SÉLECTIONNER UN FILM
 // ==================================================
@@ -52,6 +76,12 @@
 // PISTE : un changement de film doit aussi réinitialiser séance et sièges.
 // MODÈLE : #film-details contient déjà un exemple de détail à reproduire.
 // ÉCRIVEZ VOTRE CODE ICI :
+
+let button = document.querySelectorAll('[data-film-id="2"]');
+
+button.addEventListener('click', function() {
+	alert('test test test');
+});
 
 
 // ==================================================
