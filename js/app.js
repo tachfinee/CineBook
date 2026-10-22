@@ -130,6 +130,30 @@ for(let i =0;i<films.length;i++){
 // MODÈLE : les trois boutons statiques de #seances-container montrent le HTML attendu.
 // ÉCRIVEZ VOTRE CODE ICI :
 
+let seances = document.querySelector("#seances-container");
+
+
+for(let i =0;i<films.length;i++){
+
+  button[i].addEventListener('click', (e)=> {
+
+    // let x=films[i].seances.length-1;
+    // alert(films[i].seances[x].horaire);
+
+    seances.innerHTML=``;
+    for(let j=0;j<films[i].seances.length;j++){
+    seances.innerHTML+=`
+    <button type="button" data-seance-id="101" class="rounded-xl bg-cine-red px-5 py-3 font-bold text-white shadow-md">${films[i].seances[j].horaire}</button>
+`
+    }
+
+   
+    });
+
+}
+
+
+
 
 // ==================================================
 // US04 - SÉLECTIONNER UNE SÉANCE
